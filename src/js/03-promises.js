@@ -1,10 +1,9 @@
-import { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 
 const formEl = document.querySelector('.form');
 const delayFormEl = document.querySelector('input[name="delay"]');
 const stepFormEl = document.querySelector('input[name="step"]');
 const amountFormEl = document.querySelector('input[name="amount"]');
-console.log(delayFormEl);
 
 formEl.addEventListener('submit', onSubmit);
 
@@ -25,6 +24,10 @@ function onSubmit(evt) {
   let delayPromise = Number(delayFormEl.value);
   const stepPromise = Number(stepFormEl.value);
   const amountPromise = Number(amountFormEl.value);
+  if (delayPromise <= 0 || stepPromise <= 0 || amountPromise <= 0) {
+    Notiflix.Notify.info('Value can not be zero or less');
+    return;
+  }
   for (let i = 1; i <= amountPromise; i += 1) {
     createPromise(i, delayPromise)
       .then(resolve => Notiflix.Notify.success(resolve))
