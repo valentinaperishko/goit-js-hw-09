@@ -58,4 +58,14 @@ button {
 
 .timer {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  margin-right: 20px;
+  margin-top: 20px;
 }
