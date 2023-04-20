@@ -43,7 +43,7 @@ input[type='text']:focus {
   border-radius: 5px;
 }
 
-/* button {
+button {
   display: block;
   margin: auto;
   margin-top: 20px;
@@ -54,7 +54,7 @@ input[type='text']:focus {
   outline: none;
   border: none;
   cursor: pointer;
-} */
+}
 
 .timer {
   display: flex;
